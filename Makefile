@@ -12,12 +12,6 @@ OBJS =	picopng/picopng.o stippler/bitmap.o stippler/stippler_api.o stippler/stip
 
 VPATH =	%.cpp
 
-# openmp is not available on Mac OS X when using Clang
-UNAME := $(shell uname)
-ifeq ($(UNAME), Darwin)
-	OPENMPFLAG =
-endif
-
 all:	voronoi_stippler
 .SUFFIXES: .cpp .o
 
